@@ -1,6 +1,9 @@
-import React from 'react';
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   return (
     <div>
       <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
@@ -23,40 +26,15 @@ const Navbar = () => {
           </a>
           <ul className="items-stretch hidden space-x-3 lg:flex">
             <li className="flex">
-              <a
+              <Link
                 rel="noopener noreferrer"
-                href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                href="/"
+                className={`link ${
+                  pathname === "/" ? "  text-cyan-600 font-bold" : " text-white"
+                }`}
               >
-                Link
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                Link
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                Link
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                Link
-              </a>
+                Home
+              </Link>
             </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">
