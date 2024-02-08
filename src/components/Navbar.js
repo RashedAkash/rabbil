@@ -36,6 +36,58 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+            <li className="flex">
+              <Link
+                rel="noopener noreferrer"
+                href="/about"
+                className={`link ${
+                  pathname === "/about"
+                    ? "  text-cyan-600 font-bold"
+                    : " text-white"
+                }`}
+              >
+                About
+              </Link>
+            </li>
+            <li className="flex">
+              <Link
+                rel="noopener noreferrer"
+                href="/blog"
+                className={`link ${
+                  pathname === "/blog"
+                    ? "  text-cyan-600 font-bold"
+                    : " text-white"
+                }`}
+              >
+                Blog
+              </Link>
+            </li>
+            <li className="flex">
+              <Link
+                rel="noopener noreferrer"
+                href="/product"
+                className={`link ${
+                  pathname === "/product"
+                    ? "  text-cyan-600 font-bold"
+                    : " text-white"
+                }`}
+              >
+                Product
+              </Link>
+            </li>
+            <li className="flex">
+              <Link
+                rel="noopener noreferrer"
+                href="/dashboard"
+                className={`link ${
+                  pathname === "/dashboard"
+                    ? "  text-cyan-600 font-bold"
+                    : " text-white"
+                }`}
+              >
+                Dashboard
+              </Link>
+            </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">
             <button className="self-center px-8 py-3 rounded">Sign in</button>
