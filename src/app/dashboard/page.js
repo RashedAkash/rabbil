@@ -1,12 +1,15 @@
 const getData = async () => {
   try {
-    const res1 = await fetch("https://jsonplaceholder.typicode.com/users")
+    const res = await fetch("https://jsonplaceholder.typicode.com/users")
    
-    const res2 = await fetch("https://dummyjson.com/products");
-    const data1 = await res1.json()
-    const data2 = await res2.json()
+    // const res2 = await fetch("https://dummyjson.com/products");
+    // const data1 = await res1.json()
+    // const data2 = await res2.json()
+    const body = await res.json()
+    const headers = res.headers.get("X-Ratelimit-Reset");
+    const status = res.status;
 
-    return {data1:data1,data2:data2}
+    return {body:body,headers:headers,status:status}
   } catch (error) {
     throw new Error(error)
   }
@@ -14,11 +17,11 @@ const getData = async () => {
 
 const page = async() => {
   const data = await getData()
-  console.log(data);
+ 
   return (
     <div>
       <h1>This is Dashboard page</h1>
-      
+      <h1>{JSON.stringify(data["headers"])}</h1>
     </div>
   );
 };
